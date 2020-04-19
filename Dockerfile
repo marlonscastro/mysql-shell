@@ -1,21 +1,21 @@
-# FROM debian:buster-slim
-FROM ubuntu:18.04
+FROM debian:buster-slim
+# FROM ubuntu:18.04
 
-# RUN apt-get update && \ 
-# 	apt-get install -y 
+RUN apt-get update && \ 
+	apt-get install -y 
 
-# RUN apt-get update && \ 
-# 	apt-get install -y python3 libc6 libcurl4 libpython3.7  && \
-# 	apt-get --fix-broken install && \
-# 	rm -rf /var/lib/apt/lists/*
+RUN apt-get update && \ 
+	apt-get install -y python3 libc6 libcurl4 libpython3.7  && \
+	apt-get --fix-broken install && \
+	rm -rf /var/lib/apt/lists/*
 
-# COPY mysql-shell_8.0.19-1debian10_amd64.deb /tmp 	
-# COPY libc6_2.30-0ubuntu2.1_amd64.deb /tmp
+COPY mysql-shell_8.0.19-1debian10_amd64.deb /tmp 	
+COPY libc6_2.30-0ubuntu2.1_amd64.deb /tmp
 
-# RUN dpkg -i /tmp/libc6_2.30-0ubuntu2.1_amd64.deb && \
-# 	dpkg -i /tmp/mysql-shell_8.0.19-1debian10_amd64.deb && \
-#   	rm -Rf /tmp/* && \
-# 	chmod 777 /usr/bin/mysqlsh
+RUN dpkg -i /tmp/libc6_2.30-0ubuntu2.1_amd64.deb && \
+	dpkg -i /tmp/mysql-shell_8.0.19-1debian10_amd64.deb && \
+  	rm -Rf /tmp/* && \
+	chmod 777 /usr/bin/mysqlsh
 
 CMD ["/bin/bash"]
 
