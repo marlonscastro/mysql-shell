@@ -14,7 +14,7 @@ COPY mysql-shell_8.0.19-1debian10_amd64.deb /tmp
 RUN dpkg -i /tmp/mysql-shell_8.0.19-1debian10_amd64.deb && \
   	rm -Rf /tmp/*
 
-
+CMD ["/bin/bash"]
 
 
 
@@ -23,5 +23,5 @@ RUN dpkg -i /tmp/mysql-shell_8.0.19-1debian10_amd64.deb && \
 # docker run -p 3307:3306 --name node1 -e MYSQL_ROOT_PASSWORD=16scm4 -d my8innodb
 
 # Deploy no Openshift 
-# oc new-app https://github.com/marlonscastro/msysql-router.git --strategy=docker -e MYSQL_ROOT_PASSWORD=16scm4 --name router
+# oc new-app https://github.com/marlonscastro/mysql-shell.git --strategy=docker --name mysql-shell
 # Depois adiciona um Storage Mount com 1Gi no Deployment Config path::  /var/lib/mysql
