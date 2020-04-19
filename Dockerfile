@@ -17,7 +17,7 @@ RUN dpkg -i /tmp/libc6_2.30-0ubuntu2.1_amd64.deb && \
   	rm -Rf /tmp/* && \
 	chmod 777 /usr/bin/mysqlsh
 
-CMD ["mysqlsh"]
+CMD ["/bin/bash"]
 
 
 
