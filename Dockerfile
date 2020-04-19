@@ -9,7 +9,7 @@ RUN apt-get update && \
 	apt-get --fix-broken install && \
 	rm -rf /var/lib/apt/lists/*
 
-COPY mysql-shell_8.0.19-1debian10_amd64.deb /tmp 
+COPY mysql-shell_8.0.19-1debian10_amd64.deb /tmp 	
 COPY libc6_2.30-0ubuntu2.1_amd64.deb /tmp
 
 RUN dpkg -i /tmp/libc6_2.30-0ubuntu2.1_amd64.deb && \
@@ -28,3 +28,5 @@ CMD ["/bin/bash"]
 # Deploy no Openshift 
 # oc new-app https://github.com/marlonscastro/mysql-shell.git --strategy=docker --name mysql-shell
 # Depois adiciona um Storage Mount com 1Gi no Deployment Config path::  /var/lib/mysql
+
+#/.mysqlsh
