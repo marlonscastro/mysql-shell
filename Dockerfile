@@ -14,7 +14,9 @@ COPY mysql-shell_8.0.19-1debian10_amd64.deb /tmp
 RUN dpkg -i /tmp/mysql-shell_8.0.19-1debian10_amd64.deb && \
   	rm -Rf /tmp/*
 
-CMD ["/bin/bash"]
+CMD ["myqslsh"]
+
+# ENTRYPOINT ["/bin/bash"]
 
 
 
