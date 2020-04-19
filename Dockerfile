@@ -1,8 +1,13 @@
 FROM debian:buster-slim
 
-RUN apt-get update \ 
-	&& apt-get install -y --no-install-recommends \
-	&& python3 libcurl4 libpython3.7 && rm -rf /var/lib/apt/lists/*
+
+RUN apt-get update && \ 
+	apt-get install -y python3
+
+RUN apt-get update && \ 
+	apt-get install -y libcurl4 libpython3.7  && \
+	apt --fix-broken install && \
+	rm -rf /var/lib/apt/lists/*
 
 COPY mysql-shell_8.0.19-1debian10_amd64.deb /tmp 
 
