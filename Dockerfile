@@ -15,7 +15,7 @@ RUN dpkg -i /tmp/mysql-shell_8.0.19-1debian10_amd64.deb && \
   	rm -Rf /tmp/* && \
 	chmod 777 /usr/bin/mysqlsh
 
-CMD ["myqslsh"]
+CMD ["/usr/bin/myqslsh"]
 
 # ENTRYPOINT ["/bin/bash"]
 
