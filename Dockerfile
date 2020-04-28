@@ -33,5 +33,3 @@ CMD ["/bin/bash"]
 # Depois adiciona um Storage Mount com 1Gi no Deployment Config path::  /var/lib/mysql
 
 #/.mysqlsh
-
-
